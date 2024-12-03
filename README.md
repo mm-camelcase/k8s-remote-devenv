@@ -1,7 +1,3 @@
-//# k8s-remote-devenv
-//A remote kubnetes development environment using eclipse che
-
-
 # Remote Development Environment
 
 A remote kubernetes development environment backed by [Eclipse Che](https://eclipse.dev/che/).
@@ -27,8 +23,7 @@ Remote development environments offer several key benefits
 
 
 ### Prefer a local IDE?
-Eclipse Che provides a browser-based IDE out of the box, prefer the familiarity and advanced features of your local IDE No problem! A remote workspace can be easily accessed using your local IDE, just like working with a local filesystem. This guide will walk you through setting up and configuring your local IDE to connect seamlessly with a remote Eclipse Che workspace, ensuring you get the best of both worlds: the convenience of cloud resources and the power of your preferred development environment.
-(todo: review & shorten)
+Eclipse Che provides a browser-based IDE out of the box. If you prefer your local IDE, no problem! You can easily connect it to your remote workspace and work just like with a local filesystem.
 
 ### Archict...
 
@@ -52,15 +47,19 @@ This environment depends on the following tools & services:
 
 ## Project setup
 
-Each project that you wabnt to work on in the remote development environmemnt must contain a `devfile`.
-define devfile
-The devfile allows you to define your workspace...
-- the image to run
-- the endpoints to expose for development
-- the comands to build test debug and run your target project
+Each project that you want to work on in the remote development environment must contain a devfile.
 
-see https://github.com/mm-camelcase/user-service/blob/che/devfile.yaml for an example
+The devfile allows you to define your workspace:
 
+- The image to run.
+- The endpoints to expose for development.
+- The commands to build, test, debug, and run your target project.
+
+See example [devfile](https://github.com/mm-camelcase/user-service/blob/che/devfile.yaml).
+
+A one-click setup link can be added to each project that you want to develop in the dev environment, simplifying the initialization process for developers.
+
+![Dev Env](assets/images/oneclick.png)
 
 ## Workspace setup
 
