@@ -17,7 +17,7 @@ A cloud based development environment that provides a  remote setup for developi
 
 Remote development environments offer several key benefits  
 - **Simplified Onboarding**:  Click on a link and start coding
-- **Consistency**: Eliminate the "it works on my machine" problem.
+- **Consistency**: Eliminate the "_it works on my machine_" problem.
 - **Accessibility**: Develop from anywhere without needing a powerful local setup. All you need is a browser and an internet connection.
 - **Scalability**: The remote Kubernetes cluster can scale resources as needed, providing more power for compiling and testing without taxing local machines.
 
