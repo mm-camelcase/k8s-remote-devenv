@@ -1,20 +1,26 @@
 #!/bin/bash
-set -e
 
 source kubedock_setup
 
-#chcon -Rt svirt_sandbox_file_t /home/user
-#set -e
+# Stow
+## Required for https://github.com/eclipse/che/issues/22412
 
-# Adjust ownership and permissions dynamically
-#if [ "$(id -u)" != "10001" ]; then
-#    echo "Adjusting permissions for OpenShift dynamic UID..."
-#    chown -R $(id -u):0 /home/user
-#    chmod -R g+rwX /home/user
-#fi
+# /home/user/ will be mounted to by a PVC if persistUserHome is enabled
+mountpoint -q /home/user/; HOME_USER_MOUNTED=$?
 
-# Start the SSH daemon
-#/usr/sbin/sshd -f /home/user/custom-ssh/sshd_config -e
+# This file will be created after stowing, to guard from executing stow everytime the container is started
+STOW_COMPLETE=/home/user/.stow_completed
 
+if [ $HOME_USER_MOUNTED -eq 0 ] && [ ! -f $STOW_COMPLETE ]; then
+    # Create symbolic links from /home/tooling/ -> /home/user/
+    stow . -t /home/user/ -d /home/tooling/ --no-folding -v 2 > /tmp/stow.log 2>&1
+    # Vim does not permit .viminfo to be a symbolic link for security reasons, so manually copy it
+    cp /home/tooling/.viminfo /home/user/.viminfo
+    # We have to restore bash-related files back onto /home/user/ (since they will have been overwritten by the PVC)
+    # but we don't want them to be symbolic links (so that they persist on the PVC)
+    cp /home/tooling/.bashrc /home/user/.bashrc
+    cp /home/tooling/.bash_profile /home/user/.bash_profile
+    touch $STOW_COMPLETE
+fi
 
 exec "$@"

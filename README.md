@@ -49,17 +49,33 @@ This environment depends on the following tools & services:
 - Unix OS
 - [Docker](https://docs.docker.com/desktop/setup/install/linux/)
 - [OpenShift CLI (oc)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/cli_tools/openshift-cli-oc#cli-about-cli_cli-developer-commands)
-- [Helm](https://helm.sh/)
-- [Skaffold](https://skaffold.dev/)
 
-For detailed setup instructions, refer to [prerequisites.md](docs/prerequisites.md)
+## Project setup
+
+Each project that you wabnt to work on in the remote development environmemnt must contain a `devfile`.
+define devfile
+The devfile allows you to define your workspace...
+- the image to run
+- the endpoints to expose for development
+- the comands to build test debug and run your target project
+
+see https://github.com/mm-camelcase/user-service/blob/che/devfile.yaml for an example
 
 
-## Devenv Environment Setup
+## Workspace setup
 
-docker build -t test-ssh-image .
-docker tag test-ssh-image camelcasemm/che-devenv-image:2.0.0
+The worksopce is controled by the image referenced in the devfile
+All the nesessory tooling required should be installed to the workspace image.
+
+This example uses a stripped down version of `quay.io/devfile/universal-developer-image:ubi8-latest`, see `ubi9/dockerfile`.  
+
+```
+docker build -t che-devenv-image .
+docker tag che-devenv-image camelcasemm/che-devenv-image:2.0.0
 docker push camelcasemm/che-devenv-image:2.0.0
+```
+
+Fore details on how to extend the base developer workspace images see https://github.com/devfile/developer-images?tab=readme-ov-file#extending-the-base-image
 
 
 
