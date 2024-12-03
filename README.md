@@ -23,15 +23,23 @@ Remote development environments offer several key benefits
 
 
 ### Prefer a local IDE?
-Eclipse Che provides a browser-based IDE out of the box. If you prefer your local IDE, no problem! You can easily connect it to your remote workspace and work just like with a local filesystem.
+Eclipse Che provides a browser-based IDE out of the box. If you prefer your local IDE, no problem! You can easily connect it to your remote workspace and work just like with a local filesystem. (todo see vscode guide below)
 
-### Archict...
+### Architecture
 
 ![Dev Env](assets/images/che.jpeg)
 
-- each developer gets own environment
-- controled by docker container 
-- e.g. spring boot user service
+- Each developer gets their own environment, segregated via Kubernetes namespaces, ensuring isolated workspaces without interference.
+
+- There is a shared namespace for any resources or service dependencies required by the target project.
+
+- Each developer can use either the browser IDE or their local IDE to interact with their workspace, depending on their preference.
+
+- Workspaces run within individual Kubernetes pods, which provide an isolated environment for development activities.
+
+- Dependent services are managed within shared namespaces to allow consistent access and avoid redundancy.
+
+- This architecture leverages the capabilities of OpenShift to orchestrate and manage the Kubernetes cluster, ensuring scalability and reliability.
 
 
 
