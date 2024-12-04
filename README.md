@@ -60,13 +60,13 @@ The devfile allows you to define your workspace:
 
 See example [devfile](https://github.com/mm-camelcase/user-service/blob/che/devfile.yaml).
 
-A one-click setup link can be added to each project that you want to develop in the dev environment, simplifying the initialization process for developers.
+A [one-click setup link](https://github.com/mm-camelcase/user-service/tree/che?tab=readme-ov-file#demo-app) can be added to each project that you want to develop in the dev environment, simplifying the initialization process for developers.
 
 ![Dev Env](https://www.eclipse.org/che/contribute.svg)
 
 ## Workspace setup
 
-The workspace is controled by the image referenced in the devfile
+The workspace is controled by the image referenced in the devfile.
 All the nesessory tooling required should be installed to the workspace image.
 
 This example uses a stripped down version of `quay.io/devfile/universal-developer-image:ubi8-latest`, see `ubi9/dockerfile`.  
