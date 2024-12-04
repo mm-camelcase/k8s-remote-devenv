@@ -3,7 +3,7 @@
 A remote kubernetes development environment backed by [Eclipse Che](https://eclipse.dev/che/).
 
 <a href="https://mm-camelcase.github.io/site/k8s_devenv_mini.mp4">
-    <img src="assets/images/devenv.png" alt="Project Thumbnail" width="200"/>
+    <img src="assets/images/che_browser.png" alt="Project Thumbnail" width="200"/>
 </a>
 
 **Click image for a [demo](https://mm-camelcase.github.io/site/k8s_devenv_mini.mp4)**
