@@ -90,7 +90,16 @@ Fore details on how to extend the base developer workspace images see https://gi
 
 To connect to the remote workspace using your local IDE (e.g., VS Code), follow these steps:
 
-1. **Set Up Port Forwarding:**   
+1. **Login to OC CLI**
+
+| ![Dev Spaces Workspace](assets/images/devspace.png) | ![Openshift Console](assets/images/console.png) |
+|--------------------------------------|------------------------------------------|
+| **Dev Spaces Workspace**                          | **Openshift Console**                            |
+
+
+
+
+2. **Set Up Port Forwarding:**   
 Use the following commands to forward the port from your development pod (`user-api-example` in this case):
 ```
 DEV_WORKSPACE_NAME="user-api-example"
@@ -98,10 +107,10 @@ DEV_POD_NAME=$(oc get pods -o json | jq -r --arg prefix "$DEV_WORKSPACE_NAME" '.
 oc port-forward "$DEV_POD_NAME" 3000:3000
 ```
 
-2. **Install Dev Containers Extension:**    
+3. **Install Dev Containers Extension:**    
 In VS Code, install the "Dev Containers" extension. This extension allows you to open and work with containers as development environments.
 
-3. **Connect to the Remote Workspace:**
+4. **Connect to the Remote Workspace:**
 - Open VS Code.
 - Click on the Remote Explorer icon.
 - Select Dev Containers and then Attach to Running Container.
