@@ -119,6 +119,8 @@ oc port-forward "$DEV_POD_NAME" 3000:3000
 3. **Install Dev Containers Extension:**    
 In VS Code, install the "Dev Containers" extension. This extension allows you to open and work with containers as development environments.
 
+![Dev Env](assets/images/devcontainers.png)
+
 4. **Connect to the Remote Workspace:**
     - Open VS Code.
     - Click on the Remote Explorer icon.
