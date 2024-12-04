@@ -105,7 +105,7 @@ oc login --token=*********** --server=https://api.sandbox-m4.*****.p1.openshifta
 
 
 2. **Set Up Port Forwarding:**   
-Use the following commands to forward the ports from your development pod (`user-api-example` in this case):
+Use the following commands to forward the ports from your development pod ([`user-api-example`](https://github.com/mm-camelcase/user-service/blob/che/devfile.yaml#L3) in this case):
 
 ```bash
 DEV_WORKSPACE_NAME="user-api-example"
