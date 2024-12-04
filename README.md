@@ -129,9 +129,11 @@ In VS Code, install the "Dev Containers" extension. This extension allows you to
 
 ### Commands
 
-In VS Code click **_Terminal_**, then **_Run Task...** to see the available commands...
+In VS Code click **_Terminal_**, then **_Run Task..._** to see the available commands...
 
 ![tasks](assets/images/commands.png)
+
+**Note**: the browser IDE auto configures these from the [devfile configs](https://github.com/mm-camelcase/user-service/blob/che/devfile.yaml#L49-L79), but an additional [tasks.json](https://github.com/mm-camelcase/user-service/blob/che/.vscode/tasks.json) is required for a local IDE setup.
 
 
 
