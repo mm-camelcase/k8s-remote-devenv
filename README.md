@@ -76,6 +76,7 @@ All the nesessory tooling required should be installed to the workspace image.
 This example uses a stripped down version of `quay.io/devfile/universal-developer-image:ubi8-latest`, see `ubi9/dockerfile`.  
 
 ```bash
+cd ubi9/
 docker build -t che-devenv-image .
 docker tag che-devenv-image camelcasemm/che-devenv-image:2.0.0
 docker push camelcasemm/che-devenv-image:2.0.0
@@ -86,7 +87,7 @@ Fore details on how to extend the base developer workspace images see https://gi
 
 ## Local IDE
 
-
+### Connect
 
 To connect to the remote workspace using your local IDE (e.g., VS Code), follow these steps:
 
@@ -127,6 +128,12 @@ In VS Code, install the "Dev Containers" extension. This extension allows you to
     - Select **_Dev Containers: Attach to Running Kubernetes Container_**
     - Choose the pod you want to connect to (in this case, the port-forwarded pod).
     - Choose the container you want to connect to (in this case, the `devenv` container as defined in the example [devfile](https://github.com/mm-camelcase/user-service/blob/che/devfile.yaml#L7)).
+    - click **_Open Folder_**, and select the `/projects` directory, the select the target project folder (in this example `/projects/user-service/`)
+
+
+### Commands
+
+fdasfsda
 
 
 
