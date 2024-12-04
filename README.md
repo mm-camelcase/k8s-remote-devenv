@@ -105,12 +105,12 @@ oc login --token=*********** --server=https://api.sandbox-m4.*****.p1.openshifta
 
 
 2. **Set Up Port Forwarding:**   
-Use the following commands to forward the port from your development pod (`user-api-example` in this case):
+Use the following commands to forward the ports from your development pod (`user-api-example` in this case):
 
 ```bash
 DEV_WORKSPACE_NAME="user-api-example"
 DEV_POD_NAME=$(oc get pods -o json | jq -r --arg prefix "$DEV_WORKSPACE_NAME" '.items[] | select(.metadata.labels["controller.devfile.io/devworkspace_name"] | startswith($prefix)) | .metadata.name')
-oc port-forward "$DEV_POD_NAME" 3000:3000
+oc port-forward "$DEV_POD_NAME" 3000:3000 5005:5005
 ```
 
 3. **Install Dev Containers Extension:**    
