@@ -122,10 +122,11 @@ In VS Code, install the "Dev Containers" extension. This extension allows you to
 ![Dev Env](assets/images/devcontainers.png)
 
 4. **Connect to the Remote Workspace:**
-    - Open VS Code.
-    - Click on the Remote Explorer icon.
-    - Select Dev Containers and then Attach to Running Container.
-    - Choose the container you want to connect to (in this case, the port-forwarded container).
+    - Open VS Code
+    - click **_View_**, then **_Command Pallette..._**
+    - Select **_Dev Containers: Attach to Running Kubernetes Container_**
+    - Choose the pod you want to connect to (in this case, the port-forwarded pod).
+    - Choose the container you want to connect to (in this case, the `devenv` container as defined in the example [devfile](https://github.com/mm-camelcase/user-service/blob/che/devfile.yaml#L7)).
 
 
 
